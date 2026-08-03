@@ -1,4 +1,4 @@
-name: vince Kernel
+name: Dark-Ages-Último Kernel
 
 on:
   workflow_dispatch:
@@ -49,14 +49,13 @@ jobs:
 
       - name: Setup KernelSU (Hookless)
         run: |
-         # curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s legacy
+          # curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s legacy
           curl -LSs "https://raw.githubusercontent.com/Mr-Morat/KernelSU-Next/stable/kernel/setup.sh" | bash -s syscall
-
 
       - name: Start Build with log
         env:
-          KBUILD_BUILD_USER: "Nobody"
-          KBUILD_BUILD_HOST: "Desktop"
+          KBUILD_BUILD_USER: "cappuccino"
+          KBUILD_BUILD_HOST: "build"
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
           PIXELDRAIN_API_KEY: ${{ secrets.PIXELDRAIN_API_KEY }}
