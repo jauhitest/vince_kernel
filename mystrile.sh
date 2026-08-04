@@ -25,7 +25,7 @@ KIMG="$OUTDIR/Image.gz"
 export PATH="$ROOTDIR/weebx-clang/bin:$PATH"
 
 # ================= INFO =================
-KERNEL_NAME="Yoru"
+KERNEL_NAME="Mystrile"
 DEVICE="vince"
 
 # =============== DATE (WIB) ===============
@@ -51,7 +51,7 @@ ZIP_NAME=""
 clone_anykernel() {
     if [ ! -d "$ANYKERNEL_DIR" ]; then
         echo -e "$yellow[+] Cloning AnyKernel3...$white"
-        git clone -b ${DEVICE} https://github.com/rahmatsobrian/AnyKernel3.git "$ANYKERNEL_DIR" || exit 1
+        git clone -b ${DEVICE} https://github.com/jauhitest/AnyKernel3.git "$ANYKERNEL_DIR" || exit 1
     fi
 }
 
