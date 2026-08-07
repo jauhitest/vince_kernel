@@ -50,10 +50,10 @@ jobs:
         name: defconfig-${{ env.BUILD_TIME }}
         path: out/vince-perf-defconfig.txt
 
-      - name: Clone AnyKernel3
-        run: |
-          git clone https://github.com/rahmatsobrian/AnyKernel3.git -b tissot AnyKernel
-          cp out/arch/arm64/boot/Image.gz-dtb AnyKernel/
+    - name: Clone AnyKernel3
+      run: |
+        git clone https://github.com/rahmatsobrian/AnyKernel3.git -b tissot AnyKernel
+        cp out/arch/arm64/boot/Image.gz-dtb AnyKernel/
         
         echo "........................"
         echo ".    Packing Kernel    ."
