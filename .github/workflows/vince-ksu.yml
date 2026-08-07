@@ -24,7 +24,7 @@ jobs:
       run: |
            mkdir -p clang && curl -LS https://github.com/ZyCromerZ/Clang/releases/download/18.0.0git-20240124-release/Clang-18.0.0git-20240124.tar.gz -o clang.tar.gz && tar -C clang/ -xf clang.tar.gz && rm clang.tar.gz
                                     
-    - name: Fetch KernelSU-SuSFS
+    - name: SukiSu Setup
       run: |
             curl -LSs "https://raw.githubusercontent.com/KanariaAlt/SukiSU-Ultra/nongki/kernel/setup.sh" | bash -s nongki
             
@@ -50,13 +50,10 @@ jobs:
         name: defconfig-${{ env.BUILD_TIME }}
         path: out/vince-perf-defconfig.txt
 
-    - name: Fetch AnyKernel3
-      run: |
-
-        ANYKERNEL_REPO="https://github.com/MDonip/Anykernel3.git"
-        ANYKERNEL_BRANCH="tissot"
-        ANYKERNEL="AnyKernel3"
-        KERN_IMG="out/arch/arm64/boot/Image.gz-dtb" 
+      - name: Clone AnyKernel3
+        run: |
+          git clone https://github.com/rahmatsobrian/AnyKernel3.git -b tissot AnyKernel
+          cp out/arch/arm64/boot/Image.gz-dtb AnyKernel/
         
         echo "........................"
         echo ".    Packing Kernel    ."
