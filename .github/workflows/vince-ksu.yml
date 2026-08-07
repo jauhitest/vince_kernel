@@ -26,8 +26,8 @@ jobs:
                                     
     - name: Fetch KernelSU-SuSFS
       run: |
-            curl -LSs "https://raw.githubusercontent.com/backslashxx/KernelSU/master/kernel/setup.sh" | bash -
-                                                                         
+            curl -LSs "https://raw.githubusercontent.com/KanariaAlt/SukiSU-Ultra/nongki/kernel/setup.sh" | bash -s nongki
+            
     - name: Build
       run: |
             export ARCH=arm64
